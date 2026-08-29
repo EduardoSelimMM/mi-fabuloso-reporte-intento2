@@ -10,4 +10,5 @@ Para esta version muy básica sólo necesitaremos crear 3 archivos:
 
 Adicionalmente "picaremos" unos botones acá en GitHub para la magia suceda
 
-Paso: Crear el archivo "_quarto.yml"
+Paso 1: Crear el archivo "_quarto.yml"
+Paso 2: Crear el archivo "index.qmd"
