@@ -48,3 +48,108 @@ Un resumen del famoso dataset "iris"
 ```{r}
 summary(iris)
 ```
+
+# Acá pegaré contenido de una clase pasada
+
+```{r}
+library(readr)
+```
+
+```{r}
+datos <- readr::read_csv("https://cedricscherer.com/data/chicago-nmmaps-custom.csv")
+```
+
+```{r}
+summary(datos)
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp))
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point()
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_line()
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_line() + geom_point()
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "pink", shape = "diamond", size = 2)
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3)
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  theme_bw()
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  labs(x = "Año", y = "Temperatura (°F)") +
+  theme_dark()
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  labs(x = "Año", y = "Temperatura (°F)") +
+  theme_light() +
+  theme(axis.title = element_text(size = 15,
+                                  color = "purple", face = "italic"))
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  labs(x = "Año", y = "Temperatura (°F)") +
+  theme_light() +
+  theme(axis.title.x = element_text(color = "sienna", size = 15, face = "italic"),
+        axis.title.y = element_text(color = "orangered", size = 15))
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  labs(x = "Año", y = "Temperatura (°F)") +
+  theme_light() +
+  theme(axis.title.x = element_text(color = "sienna", size = 15, face = "italic"),
+        axis.title.y = element_text(color = "orangered", size = 15),
+        axis.text = element_text(color = "dodgerblue", size = 12),
+        axis.text.x = element_text(face = "italic")
+        )
+```
+
+```{r}
+datos %>% ggplot(aes(x = date, y = temp)) +
+  geom_point(color = "red", shape = "diamond", size = 2) +
+  geom_line(color = "blue", linetype = "dotted", lwd = .3) +
+  labs(x = "Año", y = "Temperatura (°F)") +
+  theme_light() +
+  theme(axis.title.x = element_text(color = "sienna", size = 15, face = "italic"),
+        axis.title.y = element_text(color = "orangered", size = 15),
+        axis.text = element_text(color = "dodgerblue", size = 12),
+        axis.text.x = element_text(angle = 50, vjust = 1, hjust = 1, size = 12)
+        )
+```
